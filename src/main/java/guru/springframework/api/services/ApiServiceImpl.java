@@ -22,8 +22,7 @@ public class ApiServiceImpl implements ApiService {
 	public Post getPost(Integer post_number) {
 		
 		UriComponentsBuilder uriBuilder = UriComponentsBuilder
-				.fromUriString(api_url)
-				.queryParam("post_number", post_number);
+				.fromUriString(api_url + post_number);
 		
 		return restTemplate.getForObject(uriBuilder.toUriString(), Post.class); 
 	}
